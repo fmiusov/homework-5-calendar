@@ -1,15 +1,15 @@
 $(document).ready(function() {
-    console.log(moment("1995-12-25"))
         //GIVEN I am using a daily planner to create a schedule
         // WHEN I open the planner
         // THEN the current day is displayed at the top of the calendar
     $("#currentDay").text(moment().format("dddd, MMMM Do YYYY"));
         // WHEN I scroll down
         // THEN I am presented with timeblocks for standard business hours
-    
+
         // WHEN I view the timeblocks for that day
         // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-
+    // if (($(".hour").textContent) < )
+        console.log(($("textarea").attr("data-index")))
         // WHEN I click into a timeblock
 
         // THEN I can enter an event
