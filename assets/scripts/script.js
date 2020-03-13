@@ -1,25 +1,32 @@
 $(document).ready(function() {
-        //GIVEN I am using a daily planner to create a schedule
-        // WHEN I open the planner
-        // THEN the current day is displayed at the top of the calendar
-    $("#currentDay").text(moment().format("dddd, MMMM Do YYYY"));
-        // WHEN I scroll down
-        // THEN I am presented with timeblocks for standard business hours
+  $("#currentDay").text(moment().format("dddd, MMMM Do YYYY"));
 
-        // WHEN I view the timeblocks for that day
-        // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-    // if (($(".hour").textContent) < )
-        console.log(($("textarea").attr("data-index")))
-        // WHEN I click into a timeblock
+  // WHEN I view the timeblocks for that day
+  // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
 
-        // THEN I can enter an event
+  for (var i = 0; i < 9; i++) {
+    hourRow = $(".hour").children().prevObject[i];
+    currentHour = moment().format("k");
+    hourChange = $("textarea");
+    console.log(hourRow.id)
+    if (parseInt(currentHour) > parseInt(hourRow.id)) {
+      hourChange.addClass("past");
+    } else if (parseInt(currentHour) === parseInt(hourRow.id)) {
+      hourChange.addClass("present");
+    } else if (parseInt(currentHour) < parseInt(hourRow.id)) {
+      hourChange.addClass("future");
+    }
+  }
 
-        // WHEN I click the save button for that timeblock
+  // WHEN I click into a timeblock
 
-        // THEN the text for that event is saved in local storage
+  // THEN I can enter an event
 
-        // WHEN I refresh the page
+  // WHEN I click the save button for that timeblock
 
-        // THEN the saved events persist
-    
-})
+  // THEN the text for that event is saved in local storage
+
+  // WHEN I refresh the page
+
+  // THEN the saved events persist
+});
